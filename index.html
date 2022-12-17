@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ceasers Cipher</title>
+</head>
+<body>
+    <h1>Caesers Cipher</h1>
+    <h2>This program will encrypt text via Ceasers Cipher</h2>
+
+    <input type="text" id="sentence">
+    <button type="button" onclick="rot13()">Submit</button>
+    <h3> Output text: <span id="output"></span></h3>
+    <script>
+
+function rot13() {
+    let str = document.getElementById("sentence").value;
+    let myRegex = /[^a-zA-Z0-9\s]/ig;
+    let noUndsString = str.replace(myRegex, "").toUpperCase()
+    let text;
+    // return noUndsString
+    let arrOfLets= noUndsString.split("")
+    let mutatedArr = arrOfLets.map(function (letter){
+        switch (letter){
+            case "A": 
+                return "G";
+            case "B":
+                return "O";
+            case "C":
+                return "P";
+            case "D":
+                return "Q";
+            case "E":
+                return "R";
+            case "F":
+                return "S";
+            case "G":
+                return "T";
+            case "H":
+                return "U";
+            case "I":
+                return "V";
+            case "J":
+                return "W"
+            case "K":
+                return "X";
+            case "L":
+                return "Y";
+            case "M":
+                return "Z";
+            case "N":
+                return "A";
+            case "O":
+                return "B";
+            case "P":
+                return "C";
+            case "Q":
+                return "D";
+            case "R":
+                return "E";
+            case  "S":
+                return "F";
+            case "T":
+                return "G";
+            case "U":
+                return "H";
+            case "V":
+                return "I";
+            case "W":
+                return "J";
+            case "X":
+                return "K";
+            case "Y":
+                return "L"
+            case "Z":
+                return "M"
+            case " ":
+                return " ";
+            case "!":
+                return "!";
+            case `"`:
+                return `"`;
+            case "-":
+                return "-";
+            case "?":
+                return "?";
+        }
+    } )
+    // for (let i = 0; i < arrOfLets.length; i++ ){
+    //     switch (arrOfLets[i]){
+    //         case a: 
+    //         result.push("N")
+    //     }
+    text = mutatedArr.join("")
+    document.getElementById("output").innerHTML = text;
+    // }
+}
+
+
+    </script>
+</body>
+</html>
